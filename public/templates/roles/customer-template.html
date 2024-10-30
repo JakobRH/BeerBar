@@ -1,0 +1,49 @@
+<div class="card" data-address="{{ person.address }}">
+  <div class="card-body">
+    <h5 class="card-title"><img src="assets/{{ role }}.png" alt="{{ role }}"><span
+            title="{{ person.address }}">{{ person.address }}</span></h5>
+    <p class="card-text">
+      Ξ <span class="eth-balance-{{ person.address }}">{{ person.ether }}</span>
+      <br/>
+      <span class="beertoken-balance-{{ person.address }}">{{ person.beertokens }}</span>
+      <img src="assets/beer.png" alt="Beer Token"/>
+      <br/>
+      <span class="pending-beertoken-balance-{{ person.address }}">{{ person.pendingBeertokens }}</span> pending
+      <img src="assets/beer.png" alt="Pending Beer Token"/>
+    </p>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><img src="assets/beer.png" height="25px" width="25px" alt="Beer"/></span>
+      </div>
+      <label for="buy-beer-quantity" hidden>Buy Beer</label>
+      <input type="number" class="form-control" id="buy-beer-quantity" value="0"/>
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary" id="buy-beer-submit">Buy Beer</button>
+      </div>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text ether"></span>
+      </div>
+      <label for="buy-beertoken-quantity" hidden>Buy Beer Token</label>
+      <input type="number" class="form-control" id="buy-beertoken-quantity" value="0"/>
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary" id="buy-beertoken-submit">Buy Tokens</button>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><img src="assets/beer.png" alt="Beer"/></span>
+      </div>
+      <label for="cancel-beer-quantity" hidden>Cancel Beer</label>
+      <input type="number" class="form-control" id="cancel-beer-quantity" value="0"/>
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-warning" id="cancel-beer-submit">Cancel Beer</button>
+      </div>
+    </div>
+
+  </div>
+</div>

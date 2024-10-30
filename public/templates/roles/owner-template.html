@@ -1,0 +1,91 @@
+<div class="card" data-address="{{ person.address }}">
+  <div class="card-body">
+    <h5 class="card-title"><img src="assets/{{ role }}.png" alt="{{ role }}"><span
+            title="{{ person.address }}">{{ person.address }}</span></h5>
+    <p class="card-text">
+      Ξ <span class="eth-balance-{{ person.address }}">{{ person.ether }}</span>
+      <br/>
+      <span class="beertoken-balance-{{ person.address }}">{{ person.beertokens }}</span>
+      <img src="assets/beer.png" alt="Beer Token"/>
+      <br/>
+      <span class="pending-beertoken-balance-{{ person.address }}">{{ person.pendingBeertokens }}</span> pending
+      <img src="assets/beer.png" alt="Pending Beer Token"/>
+    </p>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><img src="assets/beer.png" alt="Beer"/></span>
+      </div>
+      <label for="supply-beer-quantity" hidden>Supply Beer</label>
+      <input type="number" class="form-control" id="supply-beer-quantity" value="0"/>
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary" id="supply-beer-submit">Supply Beer</button>
+      </div>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text ether"></span>
+      </div>
+      <label for="set-beer-price-quantity" hidden>Beer Price</label>
+      <input type="number" class="form-control" id="set-beer-price-quantity"
+             value="{{ currentBeerPrice }}"/>
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary" id="set-beer-price-submit">Set Beer Price</button>
+      </div>
+    </div>
+
+
+    <div class="input-group mb-3">
+      <label for="promote-recipient-select" hidden>Promote Recipient</label>
+      <select class="custom-select" id="promote-recipient-select">
+        {{#each persons}}
+        <option value="{{ this }}">{{ this }}</option>
+        {{/each}}
+      </select>
+      <div class="input-group-append">
+        <label for="promote-role-select" hidden>Promote Role</label>
+        <select class="custom-select" id="promote-role-select">
+          <option value="barkeeper">Barkeeper</option>
+          <option value="owner">Owner</option>
+        </select>
+        <button type="submit" class="btn btn-primary" id="promote-submit">Promote</button>
+      </div>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text ether"></span>
+      </div>
+      <label for="payout-quantity" hidden>Payout</label>
+      <input type="number" class="form-control" id="payout-quantity" value="0"/>
+      <label for="payout-recipient-select" hidden>Payout Recipient</label>
+      <select class="custom-select" id="payout-recipient-select">
+        {{#each persons}}
+        <option value="{{ this }}">{{ this }}</option>
+        {{/each}}
+      </select>
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary" id="payout-submit">Payout</button>
+      </div>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">BeerToken</span>
+      </div>
+      <label for="beertoken-address" hidden>Beer Token Address</label>
+      <input type="text" class="form-control" id="beertoken-address" placeholder="Address"
+             value="{{ beerTokenAddress }}">
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary" id="beertoken-address-submit">Set</button>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <button type="submit" class="btn btn-warning" id="renounce-owner-submit">Renounce Owner Role
+      </button>
+    </div>
+
+  </div>
+</div>

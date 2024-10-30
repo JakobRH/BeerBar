@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+
+header {
+    grid-area: header;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #001529;
+    color: white;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.load-bar {
+    display: flex;
+    position: absolute;
+    right: 2rem;
+}
+
+main {
+    grid-area: main;
+    overflow: auto;
+    height: 100%;
+    background-color: #f0f2f5;
+    padding: 1rem 12.5%;
+}
+
+.card-text {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+}
+
+#bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-gap: 1rem;
+    grid-template-areas:
+    'bar bar bar'
+    'owner barkeeper dj'
+    'customer customer customer';
+}
+
+.bar {
+    grid-area: bar;
+}
+
+.owner {
+    grid-area: owner;
+}
+
+.barkeeper {
+    grid-area: barkeeper;
+}
+
+.dj {
+    grid-area: dj;
+}
+
+#owner, #barkeeper, #djs {
+    display: flex;
+    flex-direction: column;
+}
+
+#owner > .card, #barkeeper > .card, #djs > .card {
+    flex: 1;
+    margin-bottom: 0.5rem;
+}
+
+#owner > .card:last-child, #barkeeper > .card:last-child, #djs > .card:last-child {
+    margin-bottom: 0;
+}
+
+.customer {
+    grid-area: customer;
+}
+
+#customer {
+    display: flex;
+}
+
+#customer > .card {
+    flex: 1;
+    margin-right: 0.5rem;
+}
+
+#customer > .card:last-child {
+    margin-right: 0;
+}
+
+footer {
+    grid-area: footer;
+    position: sticky;
+    z-index: 10;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0A2641;
+    color: white;
+}
+
+.bar-header {
+    display: flex;
+    align-items: center;
+}
+
+.bar-header span {
+    flex-grow: 1;
+}
+
+.bar-open, .bar-closed {
+    display: none;
+    width: 128px;
+    height: 128px;
+}
+
+.bar-open.active, .bar-closed.active {
+    display: block;
+}
+
+.ether::after {
+    content: 'Ξ';
+    width: 25px;
+    padding: 0;
+    justify-content: center;
+}
+
+.input-group-prepend img {
+    width: 25px;
+    height: 25px;
+}
+
+img {
+    width: 32px;
+    height: 32px;
+}
+
+@media only screen and (max-width: 950px) {
+    main {
+        padding: 1rem 1rem;
+    }
+
+    header {
+        justify-content: left;
+    }
+}

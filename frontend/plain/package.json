@@ -1,0 +1,13 @@
+{
+  "name": "beer-bar-project-frontend-plain",
+  "version": "2.0.0",
+  "description": "Simple frontend with plain html, css, javascript",
+  "author": "Written by Lukas Hetzenecker; Reworked by Günter Windsperger; Smart Contracts; TU Wien",
+  "private": true,
+  "scripts": {
+    "start": "http-server src -p 3000 -c-1 -d"
+  },
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
+}

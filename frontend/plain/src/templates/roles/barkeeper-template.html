@@ -1,0 +1,45 @@
+<div class="card" data-address="{{ person.address }}">
+  <div class="card-body">
+    <h5 class="card-title"><img src="assets/{{ role }}.png" alt="{{ role }}"><span
+            title="{{ person.address }}">{{ person.address }}</span></h5>
+    <p class="card-text"><span class="eth-balance-{{ person.address }}">
+      Ξ {{ person.ether }}</span>
+      <br/>
+      <span class="beertoken-balance-{{ person.address }}">{{ person.beertokens }}</span>
+      <img src="assets/beer.png" alt="Beer Token"/>
+      <br/>
+      <span class="pending-beertoken-balance-{{ person.address }}">{{ person.pendingBeertokens }}</span> pending
+      <img src="assets/beer.png" alt="Pending Beer Token"/>
+    </p>
+
+    <div class="input-group mb-3">
+      <button type="submit" class="btn btn-primary col mr-3" id="open-bar-submit">Open Bar</button>
+      <button type="submit" class="btn btn-warning col" id="close-bar-submit">Close Bar</button>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><img src="assets/beer.png" alt="Beer"/></span>
+      </div>
+      <label for="serve-beer-quantity" hidden>Serve Beer</label>
+      <input type="number" class="form-control" id="serve-beer-quantity" value="0"/>
+      <label for="serve-beer-recipient-select" hidden>Select Beer Recipient</label>
+      <select class="custom-select" id="serve-beer-recipient-select">
+        {{#each persons}}
+        <option value="{{ this }}">{{ this }}</option>
+        {{/each}}
+      </select>
+      <div class="input-group-append">
+        <button type="submit" class="btn btn-primary" id="serve-beer-submit">Serve Beer</button>
+      </div>
+    </div>
+
+    <div class="input-group">
+      <button type="submit" class="btn btn-warning" id="renounce-barkeeper-submit">Renounce Barkeeper
+        Role
+      </button>
+    </div>
+
+  </div>
+</div>
+

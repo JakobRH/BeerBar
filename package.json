@@ -1,0 +1,16 @@
+{
+  "name": "beer-bar-project",
+  "version": "1.2.0",
+  "description": "Solidity project with frontend clients",
+  "scripts": {
+    "truffle": "node_modules/.bin/truffle",
+    "dev": "node_modules/.bin/truffle develop",
+    "test": "node_modules/.bin/truffle test",
+    "compile": "node_modules/.bin/truffle compile"
+  },
+  "author": "Written by Lukas Hetzenecker; Updated by Günter Windsperger; Smart Contracts; TU Vienna",
+  "dependencies": {
+    "truffle": "^5.5.6",
+    "truffle-assertions": "^0.9.2"
+  }
+}

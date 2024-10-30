@@ -1,0 +1,46 @@
+{
+  "name": "beer-bar-project-frontend-react",
+  "version": "1.0.0",
+  "description": "Frontend with react and drizzle",
+  "author": "Written by Aida Aliu; Updated by Günter Windsperger; Smart Contracts; TU Wien",
+  "private": true,
+  "homepage": "https://bar.pages.sc.logic.at/e11734084",
+  "dependencies": {
+    "@drizzle/react-plugin": "^1.5.3",
+    "@drizzle/store": "^1.5.3",
+    "antd": "^4.16.1",
+    "lodash": "^4.17.21",
+    "query-string": "^7.1.1",
+    "react": "^17.0.2",
+    "react-async": "^10.0.1",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.6",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "4.0.3",
+    "react-toastify": "^7.0.4",
+    "styled-components": "^5.3.3",
+    "web3": "^1.7.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
